@@ -1,0 +1,8 @@
+{$CHAT_DOMAIN:localhost} {
+	encode gzip
+	reverse_proxy api:8080
+}
+
+rtc.{$CHAT_DOMAIN:localhost} {
+	reverse_proxy livekit:7880
+}

@@ -1,0 +1,92 @@
+{
+  "expo": {
+    "name": "OrzuChat",
+    "slug": "orzuchat",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "orzuchat",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#0A1120",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "ai.orzu.chat",
+      "infoPlist": {
+        "NSCameraUsageDescription": "OrzuChat uses the camera for video calls and photos.",
+        "NSMicrophoneUsageDescription": "OrzuChat uses the microphone for calls and voice messages.",
+        "NSPhotoLibraryUsageDescription": "OrzuChat needs photos and videos to send in chat.",
+        "NSContactsUsageDescription": "OrzuChat shows which of your phone contacts are on OrzuChat."
+      }
+    },
+    "android": {
+      "package": "ai.orzu.chat",
+      "adaptiveIcon": {
+        "backgroundColor": "#FFFFFF",
+        "foregroundImage": "./assets/images/android-icon-foreground.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "softwareKeyboardLayoutMode": "resize",
+      "permissions": [
+        "CAMERA",
+        "RECORD_AUDIO",
+        "MODIFY_AUDIO_SETTINGS",
+        "android.permission.POST_NOTIFICATIONS",
+        "READ_CONTACTS"
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash-icon.png",
+          "resizeMode": "contain",
+          "backgroundColor": "#FFFFFF"
+        }
+      ],
+      "expo-secure-store",
+      "expo-sharing",
+      [
+        "expo-notifications",
+        {
+          "sounds": [],
+          "enableBackgroundRemoteNotifications": true
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "OrzuChat needs photos and videos to send in chat.",
+          "cameraPermission": "OrzuChat uses the camera for photos and video calls."
+        }
+      ],
+      [
+        "expo-audio",
+        {
+          "microphonePermission": "OrzuChat uses the microphone for calls and voice messages."
+        }
+      ],
+      [
+        "expo-contacts",
+        {
+          "contactsPermission": "OrzuChat shows which of your phone contacts are on OrzuChat."
+        }
+      ],
+      "@livekit/react-native-expo-plugin",
+      "@config-plugins/react-native-webrtc"
+    ],
+    "extra": {
+      "supabaseUrl": "https://rmvlpxryyxxdjmclqhaa.supabase.co",
+      "supabaseAnonKey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJtdmxweHJ5eXh4ZGptY2xxaGFhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk3MTkyNjYsImV4cCI6MjEwNTI5NTI2Nn0.TUlTCRoER8BtiS6v_ZP5cHAF3L6JxxATvMT5HBd1HxY",
+      "apiUrl": "http://62.238.97.62:8080"
+    },
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

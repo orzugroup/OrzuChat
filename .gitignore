@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+.expo/
+dist/
+web-build/
+*.tsbuildinfo
+
+# Native / EAS
+ios/
+android/
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+
+# Env
+.env
+.env.*
+!.env.example
+
+# Supabase
+supabase/.temp/
+supabase/.branches/
+
+# Go
+apps/api/orzu-chat-api
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
