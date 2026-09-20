@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
   },
+  async redirects() {
+    const apk = process.env.NEXT_PUBLIC_APK_URL?.trim();
+    if (!apk) return [];
+    return [{ source: '/orzuchat.apk', destination: apk, permanent: false }];
+  },
   async headers() {
     return [
       {
