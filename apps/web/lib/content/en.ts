@@ -16,7 +16,7 @@ export const en: Dict = {
     comingSoonApp: 'Coming soon to the App Store',
     getOnPlay: 'Get it on Google Play',
     getOnAppStore: 'Download on the App Store',
-    downloadApk: 'Download APK',
+    downloadApk: 'Download Android APK',
     apkComingSoon: 'APK coming soon',
     notPublishedYet: 'The app is being prepared for release. This link goes live the moment it ships.',
     learnMore: 'Learn more',
@@ -32,6 +32,7 @@ export const en: Dict = {
     features: 'Features',
     security: 'Security',
     rooms: 'Rooms',
+    people: 'People',
     faq: 'FAQ',
     download: 'Download',
     support: 'Support',
@@ -39,9 +40,9 @@ export const en: Dict = {
 
   home: {
     meta: {
-      title: 'OrzuChat — end-to-end encrypted messenger',
+      title: 'OrzuChat — real conversations, end-to-end encrypted',
       description:
-        'OrzuChat is a private, end-to-end encrypted messenger: one-to-one chats, group Rooms, and encrypted voice and video calls. Keys never leave your phone, so the server cannot read a thing. No ads. 10 languages. Download for Android.',
+        'OrzuChat is the messenger for friends and family: private chats, Rooms, voice and video calls with end-to-end encryption. Keys never leave your phone. Free, no ads. Download the Android APK now — Google Play is coming soon.',
       keywords: [
         'encrypted messenger app',
         'end-to-end encrypted messenger',
@@ -60,15 +61,16 @@ export const en: Dict = {
     },
     hero: {
       badge: 'End-to-end encryption on every chat and call',
-      h1: 'The messenger where only you can read the conversation',
-      sub: 'OrzuChat encrypts every message, file, voice note and call right on your phone. Keys live in your device’s secure storage and never leave it — even our servers only ever see an encrypted stream.',
+      h1: 'Talk like you are in the same room. Only the person you write to can read it',
+      sub: 'Friends in a cafe, family in the kitchen, a late-night rooftop chat — OrzuChat keeps the living moment and locks it with a key on your phone. Messages, photos, voice notes and video calls are encrypted before they leave the device. The server only ever sees ciphertext. Free, no ads, no data selling.',
       secondary: 'How the encryption works',
       imageAlt:
-        'Smartphone showing the OrzuChat chat interface with blue and mint message bubbles on a dark navy background',
-      note: 'Free. No ads. No data selling.',
+        'Three friends in a warm cafe laughing and messaging each other on their phones',
+      note: 'Android is available now. Google Play and iOS are coming soon.',
+      apkHint: 'The main button is the official APK. Install takes a minute — no app store required.',
       stats: [
-        { value: '10', label: 'interface languages' },
-        { value: '10', label: 'chat themes' },
+        { value: 'APK', label: 'download now' },
+        { value: '10', label: 'languages & themes' },
         { value: '0', label: 'ads and trackers' },
       ],
     },
@@ -167,7 +169,7 @@ export const en: Dict = {
         'Fine-grained control over who can add you to Rooms',
       ],
       imageAlt:
-        'Several glass tiles with participant silhouettes in a group video call, connected by glowing lines',
+        'A group of friends hugging in a park — the living face of OrzuChat Rooms',
     },
     languages: {
       h2: 'Your language, your style',
@@ -177,6 +179,62 @@ export const en: Dict = {
         'Pick your wallpaper and bubble colours: from the classic blue to Night, Ocean, Forest, Sunset, Lavender, Sand, Rose, Graphite and Mint. Light and dark mode follow your system settings automatically.',
       imageAlt: 'Three smartphones showing OrzuChat: the chat list, a conversation and the theme picker',
     },
+    moments: {
+      h2: 'This is what real conversation looks like',
+      sub: 'Not stock icons — living people: friends, couples, family. OrzuChat is for the ones you actually want to stay close to.',
+      items: [
+        {
+          src: '/images/friends-cafe-chat.png',
+          alt: 'Three friends in a cafe laughing and messaging on their phones',
+          title: 'Friends at one table',
+          text: 'Jokes, voice notes and photos leave in a second — and stay only with you.',
+        },
+        {
+          src: '/images/friends-video-call.png',
+          alt: 'Two friends on a sofa on a video call with people they love',
+          title: 'Video that feels close',
+          text: 'Call family or your best friends — every frame is encrypted.',
+        },
+        {
+          src: '/images/couple-night-chat.png',
+          alt: 'A couple on a rooftop at night looking at one phone together',
+          title: 'Quiet conversations',
+          text: 'Late-night messages nobody else can open.',
+        },
+        {
+          src: '/images/group-friends-park.png',
+          alt: 'A group of friends hugging in a park and looking at their phones',
+          title: 'Your people',
+          text: 'A Room for the whole crew: chat, files and a group call.',
+        },
+        {
+          src: '/images/family-kitchen-call.png',
+          alt: 'A family in the kitchen on a video call with relatives',
+          title: 'Family on the line',
+          text: 'Parents, kids, grandparents — one call, no ads between you.',
+        },
+        {
+          src: '/images/friends-city-evening.png',
+          alt: 'Four friends walking through the city at dusk with phones in hand',
+          title: 'The city does not get in the way',
+          text: 'Walking together or living continents apart — the chat stays yours.',
+        },
+      ],
+    },
+    people: [
+      {
+        src: '/images/friends-laughing-phones.png',
+        alt: 'Three friends on a sofa laughing at one message on a phone',
+      },
+      {
+        src: '/images/colleagues-video-chat.png',
+        alt: 'Colleagues in a coworking space on a video call with friends',
+      },
+      {
+        src: '/images/friends-video-call.png',
+        alt: 'Friends at home on a video call, one showing the screen to the other',
+      },
+    ],
     showcase: {
       h2: 'A look inside',
       sub: 'A calm, uncluttered interface that stays out of your way.',
@@ -233,7 +291,11 @@ export const en: Dict = {
         },
         {
           q: 'Which devices does OrzuChat support?',
-          a: 'Android is available today as a direct APK install, and the Google Play release is being prepared. An iOS version is planned for later.',
+          a: 'Android is available right now: tap “Download Android APK” on this page and install the official file. The Google Play listing is being prepared. An iOS version will follow later.',
+        },
+        {
+          q: 'Why is it not on Google Play yet — and is the APK safe?',
+          a: 'The store listing is still in review. The APK on this site is the same official OrzuChat build (package ai.orzu.chat). Download only from orzuchat.com or this page, never from random mirrors.',
         },
         {
           q: 'Which languages does the app support?',
@@ -246,9 +308,9 @@ export const en: Dict = {
       ],
     },
     cta: {
-      h2: 'Try OrzuChat',
-      text: 'Private conversation is one download away. Free, ad-free and tracking-free.',
-      note: 'Android is available now. The iOS version is in development.',
+      h2: 'Download the APK and text your people',
+      text: 'The official Android file is here — no waiting for the store. Free, no ads, no tracking. Google Play will light up as soon as review finishes.',
+      note: 'iPhone and iPad are in development. For now, invite friends on Android.',
     },
   },
 
@@ -267,14 +329,15 @@ export const en: Dict = {
     },
     h1: 'Download OrzuChat',
     intro: [
-      'OrzuChat is free, shows no ads and collects no data for advertising profiles. Here is every way to install it.',
+      'First: the official Android APK. This is the fastest way to install OrzuChat today — the store is still being prepared, the app already works. Free, no ads, no advertising profiles.',
     ],
     playTitle: 'Google Play',
     playText:
-      'The app is being prepared for the Google Play store. As soon as it passes review, this button becomes a real link.',
-    apkTitle: 'Android APK file',
+      'The Google Play listing is still in progress. As soon as review finishes, this button becomes a live link. Until then, install the APK above — it is the same official build.',
+    apkTitle: 'Official APK — install now',
     apkText:
-      'A direct APK install is the fastest way to try OrzuChat before the store release. The link will appear here as soon as the build is published.',
+      'Download the file from this page and install it on Android. Allow installs from the browser, open OrzuChat and sign in with your number — encryption keys are created on the phone automatically.',
+    apkBadge: 'Primary install method',
     iosTitle: 'iPhone and iPad',
     iosText: 'The iOS version is in development. We will announce the release on this page.',
     stepsTitle: 'How to install the APK',
@@ -638,7 +701,7 @@ export const en: Dict = {
     madeBy: 'Made by',
     orzuxText: 'AI solutions for business',
     rights: 'All rights reserved.',
-    availability: 'Android — now · Google Play — soon · iOS — later',
+    availability: 'Android APK — now · Google Play — soon · iOS — later',
   },
 
   notFound: {

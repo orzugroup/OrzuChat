@@ -13,6 +13,8 @@ import { Faq } from '../sections/Faq';
 import { Features } from '../sections/Features';
 import { Hero } from '../sections/Hero';
 import { LanguagesSection } from '../sections/LanguagesSection';
+import { Moments } from '../sections/Moments';
+import { PeopleStrip } from '../sections/PeopleStrip';
 import { RoomsSection } from '../sections/RoomsSection';
 import { SecuritySection } from '../sections/SecuritySection';
 import { Showcase } from '../sections/Showcase';
@@ -30,7 +32,9 @@ export function HomePage({ dict, locale }: { dict: Dict; locale: Locale }) {
         ]}
       />
       <Hero dict={dict} locale={locale} />
+      <PeopleStrip dict={dict} />
       <TrustStrip dict={dict} />
+      <Moments dict={dict} />
       <Features dict={dict} />
       <SecuritySection dict={dict} locale={locale} />
       <RoomsSection dict={dict} />

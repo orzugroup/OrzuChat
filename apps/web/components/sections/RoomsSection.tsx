@@ -14,14 +14,26 @@ export function RoomsSection({ dict }: { dict: Dict }) {
               aria-hidden
               className="brand-gradient absolute inset-10 -z-10 rounded-[3rem] opacity-20 blur-3xl"
             />
-            <Image
-              src="/images/rooms-group-call.png"
-              alt={rooms.imageAlt}
-              width={1152}
-              height={864}
-              sizes="(min-width: 1024px) 560px, 100vw"
-              className="w-full rounded-[2rem] border border-line shadow-[0_30px_70px_-40px_rgba(11,18,32,0.6)] dark:border-navy-line"
-            />
+            <div className="overflow-hidden rounded-[2rem] border border-line shadow-[0_30px_70px_-40px_rgba(11,18,32,0.6)] dark:border-navy-line">
+              <Image
+                src="/images/group-friends-park.png"
+                alt={rooms.imageAlt}
+                width={1400}
+                height={900}
+                sizes="(min-width: 1024px) 560px, 100vw"
+                className="aspect-[4/3] w-full object-cover"
+              />
+            </div>
+            <div className="absolute -bottom-6 -right-2 hidden w-[46%] overflow-hidden rounded-[1.4rem] border border-white/70 shadow-2xl sm:block dark:border-white/10">
+              <Image
+                src="/images/rooms-group-call.png"
+                alt=""
+                width={800}
+                height={600}
+                sizes="240px"
+                className="aspect-[4/3] w-full object-cover"
+              />
+            </div>
           </div>
 
           <div className="order-1 lg:order-2">

@@ -10,8 +10,6 @@ const SIZE: Record<Size, string> = {
 };
 
 /** Buttons placed on the always-dark bands need fixed light-on-dark colours. */
-const ON_DARK_SECONDARY =
-  'inline-flex items-center justify-center gap-2.5 rounded-full border border-white/20 bg-white/10 px-6 py-3.5 text-sm font-semibold tracking-tight text-white transition duration-200 ease-out hover:border-white/40 hover:bg-white/15 sm:text-base';
 const ON_DARK_PENDING =
   'inline-flex cursor-default items-center justify-center gap-2.5 rounded-full border border-dashed border-brand-cyan/40 bg-brand-cyan/10 px-6 py-3.5 text-sm font-semibold tracking-tight text-brand-cyan sm:text-base';
 
@@ -52,7 +50,7 @@ export function PlayStoreButton({ dict, size = 'md', onDark = false }: ButtonPro
   }
 
   return (
-    <a href={href} className={`btn-primary ${SIZE[size]}`} rel="noopener">
+    <a href={href} className={`${onDark ? 'btn-secondary-on-dark' : 'btn-secondary'} ${SIZE[size]}`} rel="noopener">
       <GooglePlayIcon className="h-[18px] w-[18px]" />
       {dict.common.getOnPlay}
     </a>
@@ -84,7 +82,7 @@ export function AppStoreButton({ dict, size = 'md', onDark = false }: ButtonProp
   }
 
   return (
-    <a href={href} className={`btn-primary ${SIZE[size]}`} rel="noopener">
+    <a href={href} className={`${onDark ? 'btn-secondary-on-dark' : 'btn-secondary'} ${SIZE[size]}`} rel="noopener">
       <AppleIcon className="h-[18px] w-[18px]" />
       {dict.common.getOnAppStore}
     </a>
@@ -119,7 +117,7 @@ export function ApkButton({ dict, size = 'md', onDark = false }: ButtonProps) {
     <a
       href={href}
       download
-      className={`${onDark ? ON_DARK_SECONDARY : 'btn-secondary'} ${SIZE[size]}`}
+      className={`btn-primary ${SIZE[size]}`}
       rel="noopener"
     >
       <DownloadIcon className="h-[18px] w-[18px]" />
@@ -128,9 +126,19 @@ export function ApkButton({ dict, size = 'md', onDark = false }: ButtonProps) {
   );
 }
 
-/** Compact header CTA: links to the store when live, otherwise to /download. */
+/** Compact header CTA: APK first while Play Store is not live. */
 export function HeaderDownloadCta({ dict, href }: { dict: Dict; href: string }) {
+  const apk = DOWNLOAD.apk.trim();
   const play = DOWNLOAD.googlePlay.trim();
+
+  if (apk) {
+    return (
+      <a href={apk} download className="btn-primary px-5 py-2.5 text-sm" rel="noopener">
+        <DownloadIcon className="h-4 w-4" />
+        {dict.common.downloadApk}
+      </a>
+    );
+  }
 
   if (play) {
     return (

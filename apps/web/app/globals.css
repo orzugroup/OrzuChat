@@ -94,7 +94,7 @@
   }
 
   .h1 {
-    @apply text-4xl leading-[1.08] font-bold tracking-tight text-balance sm:text-5xl lg:text-6xl;
+    @apply text-[2.35rem] leading-[1.05] font-bold tracking-tight text-balance sm:text-6xl lg:text-[4.25rem];
   }
 
   .h2 {
@@ -160,6 +160,10 @@
     @apply inline-flex items-center justify-center gap-2.5 rounded-full border border-line bg-white px-6 py-3.5 text-sm font-semibold tracking-tight text-ink transition duration-200 ease-out select-none hover:border-brand-blue/40 hover:text-brand-blue-deep sm:text-base dark:border-navy-line dark:bg-navy-alt/60 dark:text-white dark:hover:border-brand-cyan/40 dark:hover:text-brand-cyan;
   }
 
+  .btn-secondary-on-dark {
+    @apply inline-flex items-center justify-center gap-2.5 rounded-full border border-white/20 bg-white/10 px-6 py-3.5 text-sm font-semibold tracking-tight text-white transition duration-200 ease-out select-none hover:border-white/40 hover:bg-white/15 sm:text-base;
+  }
+
   .btn-pending {
     @apply inline-flex cursor-default items-center justify-center gap-2.5 rounded-full border border-dashed border-brand-blue/35 bg-brand-blue/8 px-6 py-3.5 text-sm font-semibold tracking-tight text-brand-blue-deep select-none sm:text-base dark:border-brand-cyan/35 dark:bg-brand-cyan/10 dark:text-brand-cyan;
   }
@@ -177,14 +181,19 @@
   /* Soft brand glow used behind hero and section artwork. */
   .glow-brand {
     background-image: radial-gradient(
-        42rem 26rem at 18% 12%,
-        color-mix(in oklab, var(--color-brand-blue) 22%, transparent),
+        46rem 30rem at 14% 8%,
+        color-mix(in oklab, var(--color-brand-blue) 32%, transparent),
         transparent 70%
       ),
       radial-gradient(
-        38rem 24rem at 82% 8%,
-        color-mix(in oklab, var(--color-brand-mint) 18%, transparent),
-        transparent 70%
+        40rem 26rem at 86% 4%,
+        color-mix(in oklab, var(--color-brand-mint) 24%, transparent),
+        transparent 68%
+      ),
+      radial-gradient(
+        28rem 20rem at 50% 30%,
+        color-mix(in oklab, var(--color-brand-cyan) 16%, transparent),
+        transparent 72%
       );
   }
 

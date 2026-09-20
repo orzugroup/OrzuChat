@@ -88,6 +88,7 @@ export type Dict = {
     features: string;
     security: string;
     rooms: string;
+    people: string;
     faq: string;
     download: string;
     support: string;
@@ -101,6 +102,7 @@ export type Dict = {
       secondary: string;
       imageAlt: string;
       note: string;
+      apkHint: string;
       stats: { value: string; label: string }[];
     };
     trust: { title: string; text: string }[];
@@ -131,6 +133,12 @@ export type Dict = {
       themesText: string;
       imageAlt: string;
     };
+    moments: {
+      h2: string;
+      sub: string;
+      items: Showcase[];
+    };
+    people: { src: string; alt: string }[];
     showcase: {
       h2: string;
       sub: string;
@@ -155,6 +163,7 @@ export type Dict = {
     playText: string;
     apkTitle: string;
     apkText: string;
+    apkBadge: string;
     iosTitle: string;
     iosText: string;
     stepsTitle: string;

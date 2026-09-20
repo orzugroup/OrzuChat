@@ -31,6 +31,7 @@ export function Header({ dict, locale, route }: { dict: Dict; locale: Locale; ro
   }, [open]);
 
   const links: { href: string; label: string }[] = [
+    { href: `${home === '/' ? '' : home}/#life`, label: dict.nav.people },
     { href: `${home === '/' ? '' : home}/#features`, label: dict.nav.features },
     { href: pathFor(locale, 'security'), label: dict.nav.security },
     { href: `${home === '/' ? '' : home}/#rooms`, label: dict.nav.rooms },
@@ -100,13 +101,7 @@ export function Header({ dict, locale, route }: { dict: Dict; locale: Locale; ro
             ))}
             <div className="mt-4 flex flex-wrap items-center gap-3">
               <LanguageSwitch locale={locale} route={route} label={dict.common.languageLabel} />
-              <Link
-                href={pathFor(locale, 'download')}
-                onClick={() => setOpen(false)}
-                className="btn-primary px-5 py-3 text-sm"
-              >
-                {dict.nav.download}
-              </Link>
+              <HeaderDownloadCta dict={dict} href={pathFor(locale, 'download')} />
             </div>
           </nav>
         </div>

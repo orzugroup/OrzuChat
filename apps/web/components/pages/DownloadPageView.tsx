@@ -32,7 +32,45 @@ export function DownloadPageView({ dict, locale }: { dict: Dict; locale: Locale 
       <PageHero title={page.h1} intro={page.intro} />
 
       <div className="container-page pb-6">
-        <div className="grid gap-5 lg:grid-cols-3">
+        <div className="relative overflow-hidden rounded-[2rem] border border-brand-blue/20 bg-navy shadow-[0_30px_80px_-40px_rgba(13,87,232,0.55)]">
+          <Image
+            src="/images/friends-laughing-phones.png"
+            alt=""
+            aria-hidden
+            fill
+            sizes="100vw"
+            className="object-cover opacity-35"
+          />
+          <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-navy via-navy/88 to-navy/50" />
+          <div className="relative grid gap-8 p-7 sm:p-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+            <div>
+              <p className="eyebrow border-brand-cyan/25 bg-brand-cyan/10 text-brand-cyan">
+                <AndroidIcon className="h-3.5 w-3.5" />
+                {page.apkBadge}
+              </p>
+              <h2 className="mt-5 text-2xl font-bold tracking-tight text-white sm:text-3xl">
+                {page.apkTitle}
+              </h2>
+              <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/75 sm:text-base">
+                {page.apkText}
+              </p>
+              <div className="mt-7">
+                <ApkButton dict={dict} size="lg" onDark />
+              </div>
+            </div>
+            <div className="relative hidden min-h-[16rem] overflow-hidden rounded-[1.6rem] border border-white/10 lg:block">
+              <Image
+                src="/images/friends-cafe-chat.png"
+                alt={page.imageAlt}
+                fill
+                sizes="400px"
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-5 grid gap-5 lg:grid-cols-2">
           <div className="card p-7">
             <span className="brand-gradient inline-flex h-11 w-11 items-center justify-center rounded-2xl text-white">
               <GooglePlayIcon className="h-5 w-5" />
@@ -45,21 +83,6 @@ export function DownloadPageView({ dict, locale }: { dict: Dict; locale: Locale 
             </p>
             <div className="mt-6">
               <PlayStoreButton dict={dict} />
-            </div>
-          </div>
-
-          <div className="card p-7">
-            <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-mint/12 text-brand-mint">
-              <AndroidIcon className="h-5 w-5" />
-            </span>
-            <h2 className="mt-5 text-lg font-semibold tracking-tight text-ink dark:text-white">
-              {page.apkTitle}
-            </h2>
-            <p className="mt-2 text-sm leading-relaxed text-ink-muted dark:text-navy-muted">
-              {page.apkText}
-            </p>
-            <div className="mt-6">
-              <ApkButton dict={dict} />
             </div>
           </div>
 
@@ -119,12 +142,12 @@ export function DownloadPageView({ dict, locale }: { dict: Dict; locale: Locale 
                 className="brand-gradient absolute inset-8 -z-10 rounded-[3rem] opacity-20 blur-3xl"
               />
               <Image
-                src="/images/app-showcase-phones.png"
+                src="/images/group-friends-park.png"
                 alt={page.imageAlt}
-                width={1280}
-                height={720}
+                width={1400}
+                height={900}
                 sizes="(min-width: 1024px) 560px, 100vw"
-                className="w-full rounded-[1.75rem] border border-line dark:border-navy-line"
+                className="w-full rounded-[1.75rem] border border-line object-cover dark:border-navy-line"
               />
             </div>
           </div>

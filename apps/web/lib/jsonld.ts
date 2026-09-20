@@ -1,7 +1,7 @@
 import type { Dict, QA } from '@/lib/content';
 import type { Locale, RouteKey } from '@/lib/i18n';
 import { pathFor } from '@/lib/i18n';
-import { ORZUX } from '@/lib/links';
+import { DOWNLOAD, ORZUX } from '@/lib/links';
 import { SITE, absoluteUrl } from '@/lib/site';
 
 const ORG_ID = `${SITE.url}/#organization`;
@@ -56,15 +56,15 @@ export function softwareApplicationJsonLd(dict: Dict): Record<string, unknown> {
     applicationSubCategory: 'Messaging',
     operatingSystem: 'Android',
     url: SITE.url,
-    downloadUrl: absoluteUrl(pathFor(dict.locale, 'download')),
+    downloadUrl: DOWNLOAD.apk.trim() || absoluteUrl(pathFor(dict.locale, 'download')),
     inLanguage: SITE.appLanguages.map((lang) => lang.code),
     description: dict.home.meta.description,
     image: absoluteUrl('/images/hero-phone-chat.png'),
     screenshot: [
+      absoluteUrl('/images/friends-cafe-chat.png'),
+      absoluteUrl('/images/friends-video-call.png'),
+      absoluteUrl('/images/group-friends-park.png'),
       absoluteUrl('/images/hero-phone-chat.png'),
-      absoluteUrl('/images/video-call.png'),
-      absoluteUrl('/images/rooms-group-call.png'),
-      absoluteUrl('/images/app-showcase-phones.png'),
     ],
     featureList: dict.home.features.items.map((item) => item.title),
     offers: {

@@ -13,6 +13,7 @@ export function Footer({ dict, locale, route }: { dict: Dict; locale: Locale; ro
   const anchor = (hash: string) => `${home === '/' ? '' : home}/#${hash}`;
 
   const product: { href: string; label: string }[] = [
+    { href: anchor('life'), label: dict.nav.people },
     { href: anchor('features'), label: dict.nav.features },
     { href: anchor('rooms'), label: dict.nav.rooms },
     { href: pathFor(locale, 'security'), label: dict.nav.security },
