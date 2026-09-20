@@ -11,7 +11,7 @@ export const DOWNLOAD = {
   /** Direct .apk. Override with NEXT_PUBLIC_APK_URL when the R2 public URL is live. */
   apk:
     process.env.NEXT_PUBLIC_APK_URL?.trim() ||
-    'https://expo.dev/artifacts/eas/LhdpQ_ms9xMrxBUN_tGQhVFIOA2rQvT4wrQWMuD-rtI.apk',
+    'https://expo.dev/artifacts/eas/-Xw3CuERrrU80dUR8tbSEQyC3WHaAJrVF5zH59SwSak.apk',
   /** Apple App Store listing — iOS is planned, not released. */
   appStore: '',
 } as const;

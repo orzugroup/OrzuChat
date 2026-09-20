@@ -1,5 +1,6 @@
 import path from 'node:path';
 import type { NextConfig } from 'next';
+import { DOWNLOAD } from './lib/links';
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
@@ -10,7 +11,7 @@ const nextConfig: NextConfig = {
     formats: ['image/avif', 'image/webp'],
   },
   async redirects() {
-    const apk = process.env.NEXT_PUBLIC_APK_URL?.trim();
+    const apk = DOWNLOAD.apk.trim();
     if (!apk) return [];
     return [{ source: '/orzuchat.apk', destination: apk, permanent: false }];
   },
