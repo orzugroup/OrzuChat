@@ -1,0 +1,204 @@
+@import 'tailwindcss';
+
+/* Dark mode is driven by a class on <html>, set before paint by the inline
+   theme script. The script seeds it from prefers-color-scheme, so the system
+   preference is still respected by default. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-brand-blue: #1b7bff;
+  --color-brand-blue-deep: #0d57e8;
+  --color-brand-cyan: #12c2f7;
+  --color-brand-mint: #00d69a;
+
+  --color-navy: #0a1120;
+  --color-navy-surface: #101a2e;
+  --color-navy-card: #131e36;
+  --color-navy-alt: #182543;
+  --color-navy-line: #22314f;
+  --color-navy-muted: #8a9bbd;
+
+  --color-mist: #f4f7fb;
+  --color-mist-alt: #eef2f8;
+  --color-ink: #0b1220;
+  --color-ink-muted: #6b7a99;
+  --color-line: #e3e8f0;
+
+  --font-sans:
+    'Inter', 'Segoe UI Variable Text', 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial,
+    'Noto Sans', sans-serif;
+
+  --radius-4xl: 1.75rem;
+  --radius-5xl: 2.25rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    background-color: var(--color-mist);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  :where(.dark) body {
+    background-color: var(--color-navy);
+    color: #eaf1ff;
+  }
+
+  /* Sticky header offset for in-page anchors. */
+  :target,
+  section[id] {
+    scroll-margin-top: 6rem;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--color-brand-cyan) 35%, transparent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand-blue);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+  }
+
+  .section {
+    @apply py-20 sm:py-24 lg:py-28;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-brand-blue/20 bg-brand-blue/8 px-3.5 py-1.5 text-xs font-semibold tracking-wide text-brand-blue-deep uppercase dark:border-brand-cyan/25 dark:bg-brand-cyan/10 dark:text-brand-cyan;
+  }
+
+  .h1 {
+    @apply text-4xl leading-[1.08] font-bold tracking-tight text-balance sm:text-5xl lg:text-6xl;
+  }
+
+  .h2 {
+    @apply text-3xl leading-tight font-bold tracking-tight text-balance sm:text-4xl;
+  }
+
+  .h3 {
+    @apply text-lg font-semibold tracking-tight sm:text-xl;
+  }
+
+  .lead {
+    @apply text-base leading-relaxed text-ink-muted sm:text-lg dark:text-navy-muted;
+  }
+
+  .prose-body {
+    @apply text-[15px] leading-7 text-ink-muted sm:text-base sm:leading-8 dark:text-navy-muted;
+  }
+
+  .gradient-text {
+    background-image: linear-gradient(
+      100deg,
+      var(--color-brand-blue-deep),
+      var(--color-brand-cyan) 55%,
+      var(--color-brand-mint)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .brand-gradient {
+    background-image: linear-gradient(
+      100deg,
+      var(--color-brand-blue-deep),
+      var(--color-brand-cyan) 55%,
+      var(--color-brand-mint)
+    );
+  }
+
+  .card {
+    @apply rounded-4xl border border-line bg-white shadow-[0_1px_2px_rgba(11,18,32,0.04),0_12px_32px_-18px_rgba(11,18,32,0.25)] dark:border-navy-line dark:bg-navy-card dark:shadow-[0_1px_2px_rgba(0,0,0,0.4),0_18px_40px_-24px_rgba(0,0,0,0.8)];
+  }
+
+  .card-interactive {
+    @apply rounded-4xl border border-line bg-white shadow-[0_1px_2px_rgba(11,18,32,0.04),0_12px_32px_-18px_rgba(11,18,32,0.25)] transition duration-300 ease-out hover:-translate-y-1 hover:border-brand-blue/30 hover:shadow-[0_2px_4px_rgba(11,18,32,0.05),0_24px_50px_-24px_rgba(27,123,255,0.45)] dark:border-navy-line dark:bg-navy-card dark:shadow-[0_1px_2px_rgba(0,0,0,0.4),0_18px_40px_-24px_rgba(0,0,0,0.8)] dark:hover:border-brand-cyan/35;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2.5 rounded-full px-6 py-3.5 text-sm font-semibold tracking-tight transition duration-200 ease-out select-none sm:text-base;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2.5 rounded-full px-6 py-3.5 text-sm font-semibold tracking-tight text-white shadow-[0_10px_30px_-10px_rgba(13,87,232,0.7)] transition duration-200 ease-out select-none hover:-translate-y-0.5 hover:shadow-[0_16px_40px_-12px_rgba(13,87,232,0.8)] active:translate-y-0 sm:text-base;
+    background-image: linear-gradient(
+      100deg,
+      var(--color-brand-blue-deep),
+      var(--color-brand-cyan) 55%,
+      var(--color-brand-mint)
+    );
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2.5 rounded-full border border-line bg-white px-6 py-3.5 text-sm font-semibold tracking-tight text-ink transition duration-200 ease-out select-none hover:border-brand-blue/40 hover:text-brand-blue-deep sm:text-base dark:border-navy-line dark:bg-navy-alt/60 dark:text-white dark:hover:border-brand-cyan/40 dark:hover:text-brand-cyan;
+  }
+
+  .btn-pending {
+    @apply inline-flex cursor-default items-center justify-center gap-2.5 rounded-full border border-dashed border-brand-blue/35 bg-brand-blue/8 px-6 py-3.5 text-sm font-semibold tracking-tight text-brand-blue-deep select-none sm:text-base dark:border-brand-cyan/35 dark:bg-brand-cyan/10 dark:text-brand-cyan;
+  }
+
+  .link-quiet {
+    @apply text-ink-muted transition-colors hover:text-brand-blue-deep dark:text-navy-muted dark:hover:text-brand-cyan;
+  }
+
+  .divider {
+    @apply border-line dark:border-navy-line;
+  }
+}
+
+@layer utilities {
+  /* Soft brand glow used behind hero and section artwork. */
+  .glow-brand {
+    background-image: radial-gradient(
+        42rem 26rem at 18% 12%,
+        color-mix(in oklab, var(--color-brand-blue) 22%, transparent),
+        transparent 70%
+      ),
+      radial-gradient(
+        38rem 24rem at 82% 8%,
+        color-mix(in oklab, var(--color-brand-mint) 18%, transparent),
+        transparent 70%
+      );
+  }
+
+  .grid-lines {
+    background-image: linear-gradient(
+        to right,
+        color-mix(in oklab, currentColor 8%, transparent) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, color-mix(in oklab, currentColor 8%, transparent) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .fade-edges {
+    mask-image: linear-gradient(to bottom, black 70%, transparent);
+  }
+}
