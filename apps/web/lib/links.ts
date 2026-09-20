@@ -8,8 +8,10 @@
 export const DOWNLOAD = {
   /** Google Play listing, e.g. 'https://play.google.com/store/apps/details?id=com.orzux.orzuchat'. */
   googlePlay: '', // TODO: add Play Store URL when published
-  /** Direct .apk on R2 (or NEXT_PUBLIC_APK_URL). Empty = “coming soon”. */
-  apk: process.env.NEXT_PUBLIC_APK_URL?.trim() || '',
+  /** Direct .apk. Override with NEXT_PUBLIC_APK_URL when the R2 public URL is live. */
+  apk:
+    process.env.NEXT_PUBLIC_APK_URL?.trim() ||
+    'https://expo.dev/artifacts/eas/LhdpQ_ms9xMrxBUN_tGQhVFIOA2rQvT4wrQWMuD-rtI.apk',
   /** Apple App Store listing — iOS is planned, not released. */
   appStore: '',
 } as const;
